@@ -27,7 +27,7 @@ const searchFilms =async (req,res) => {
     const limit =Number(req.query.limit) || 10;
     const skip=(page-1)* limit;
     //console.log('skip and limit:', skip,limit)
-    console.log(queryObject)
+    //console.log(queryObject)
     let result= film.find( queryObject ,{ __v:0 })
     result=result.skip(skip).limit(limit)
     const films= await result;
