@@ -1,9 +1,12 @@
 # nodejs  -moviesAPI
-http://host:port/api/v1/films \
+API to Get films array by filter from  mongodb \
+HTTP Method: GET \
+Endpoint URL: http://host:port/api/v1/films \
 Get params: \
 name - string in film name to search in database \
 rating -  Int value. search films with exact rating value, greater than, equal or  less than.  \
- Supports operators: >,<, = Example:rating=>5 \
+ Supports operators: >,<, = \
+ Example:rating=>5 \
 genre - string with film genre .Supports values from  database genre array: "триллер", "драма" , "мелодрама" , "музыка", "мюзикл", "криминал" ,"боевик" \
 Example: 
 http://localhost:5000/api/v1/films?genre=%D0%BA%D0%BE%D0%BC%D0%B5%D0%B4%D0%B8%D1%8F&rating=%3E8&name=%D0%BC%D1%83  \
