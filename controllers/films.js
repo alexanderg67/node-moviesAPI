@@ -1,7 +1,8 @@
-const { query } = require('express');
+
 const film = require('../models/film')
 const searchFilms =async (req,res) => {
-     
+    try { 
+       
     let queryObject={}
     let {name,rating,genre}=req.query;
     if(name) { 
@@ -13,7 +14,7 @@ const searchFilms =async (req,res) => {
         rating=rating.replace(/=/gi,'$eq-' )
         rating=rating.replace(/</gi,'$lt-' )
         
-        let [operator,value] =rating.split('-')
+        const [operator,value] =rating.split('-')
         if(operator &&value && isFinite(value)) {
         queryObject.imdbRating={[operator]: Number(value ) }
         }
@@ -32,7 +33,9 @@ const searchFilms =async (req,res) => {
     result=result.skip(skip).limit(limit)
     const films= await result;
     res.status(200).json(films)
-     
+}catch(error)  {
+    res.status(500).json({msg: error})
+}
 }
 
 module.exports= { searchFilms, }
