@@ -7,14 +7,14 @@ API to get films with filter. Requires MongoDB connection
 HTTP Method: GET\
 Endpoint URL: http://host:port/api/v1/films \
 Get params: \
-name - string in film name to search in database \
-rating - Int value. search films with exact rating value, greater than, equal or less than. \
-Supports operators: >,<, =  \
+name - search string in film name     \
+rating - Int value. search films with exact rating value, greater than,Greater than or equal,  equal, less than,less than or equal \
+Supports operators: >, >=, <,<=,  =  \
 Example:rating=>5   \
-genre - string with film genre .Supports values from database genre array: "триллер", "драма" , "мелодрама" , "музыка", "мюзикл", "криминал" ,"боевик" \
-Example: http://localhost:5000/api/v1/films?genre=%D0%BA%D0%BE%D0%BC%D0%B5%D0%B4%D0%B8%D1%8F&rating=%3E8&name=%D0%BC%D1%83 \
+genre - string with film genre .Supports values: "триллер", "драма" , "мелодрама" , "музыка", "мюзикл", "криминал" ,"боевик" \
+Query Example: http://localhost:3000/api/v1/films?genre=%D0%BA%D0%BE%D0%BC%D0%B5%D0%B4%D0%B8%D1%8F&rating=>7&name=%D0%BC%D1%83 \
 http://localhost:3000/api/v1/films?rating=>7&limit=2&page=2 \
-HTML page category.html (in public folder) makes query as example. \
+HTML page category.html (in public folder) makes query as example. 
 ## Getting Started
 
 ### Installing
